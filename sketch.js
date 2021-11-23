@@ -46,12 +46,12 @@ function setup() {
   rightBasket = new Wall(670, 290, 20, 150);
   bottomBasket = new Wall(550, 350, 300, 20);
 
-  // mouseObject = Mouse.create(canvas.elt);
-  // var options = {
-  //   mouse: mouseObject,
-  // };
-  // mConstraint = MouseConstraint.create(engine, options);
-  // World.add(world, mConstraint);
+  mouseObject = Mouse.create(canvas.elt);
+  var options = {
+    mouse: mouseObject,
+  };
+  mConstraint = MouseConstraint.create(engine, options);
+  World.add(world, mConstraint);
 }
 
 function draw() {
