@@ -1,11 +1,12 @@
 class Toy {
-  constructor(x, y, r,img) {
+  constructor(x, y, w,h,img) {
     var options = { 
       density: 0.1, 
       };
 
-    this.body = Bodies.circle(x, y, r/2, options);
-    this.radius = r;
+    this.body = Bodies.rectangle(x, y, w, h, options);
+    this.width = w;
+    this.height = h;
     this.image = img;
     World.add(world, this.body);
   }
@@ -16,7 +17,7 @@ class Toy {
     translate(this.body.position.x, this.body.position.y);
     rotate(angle);
     imageMode(CENTER);
-    image(this.image, 0, 0, this.radius, this.radius);
+    image(this.image, 0, 0, this.width, this.height);
     pop();
   }
 }

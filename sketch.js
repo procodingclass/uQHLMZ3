@@ -1,4 +1,4 @@
-//name spacing
+//name space
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -11,13 +11,10 @@ var ground, ball;
 function preload() {
   bgImg = loadImage("images/room-08.png");
   basketImg = loadImage("images/basket1.png");
- // basketImg = loadImage("images/basket2.png");
-  //basketImg = loadImage("images/basket3.png");
   droneImg = loadImage("images/drone.png");
   toy1Img = loadImage("images/room-02.png");
   toy2Img = loadImage("images/room-03.png");
   toy3Img = loadImage("images/room-04.png");
-  toy4Img = loadImage("images/room-05.png");
   toy5Img = loadImage("images/room-06.png");
   toy6Img = loadImage("images/room-07.png");
 }
@@ -28,13 +25,11 @@ function setup() {
   engine = Engine.create();
   world = engine.world;
 
-  //drone = new Drone(200, 360, 70, 70, droneImg);
-  toy1 = new Toy(100, 360, 70, toy1Img);
-  toy2 = new Toy(200, 360, 70, toy2Img);
-  toy3 = new Toy(300, 360, 70, toy3Img);
-  toy4 = new Toy(300, 360, 70, toy4Img);
-  toy5 = new Toy(300, 360, 70, toy5Img);
-  toy6 = new Toy(100, 160, 70, toy6Img);
+  toy1 = new Toy(50, 360, 40, 40, toy1Img);
+  toy2 = new Toy(100, 360, 100, 60,toy2Img);
+  toy3 = new Toy(200, 360, 50, 50,toy3Img);
+  toy5 = new Toy(300, 360, 100, 70,toy5Img);
+  toy6 = new Toy(150, 360, 70, 90,toy6Img);
 
   ground = new Wall(425, 390, 850, 20);
   left = new Wall(0, 200, 20, 400);
@@ -56,7 +51,7 @@ function setup() {
 
 function draw() {
   background(bgImg);
-  textSize(20);
+  textSize(25);
   text("Activate the drone", 100, 150);
   Engine.update(engine);
 
@@ -66,15 +61,9 @@ function draw() {
   right.display();
   topWall.display();
 
-  // leftBasket.display();
-  // rightBasket.display();
-  // bottomBasket.display();
-
- // drone.display();
   toy1.display();
   toy2.display();
   toy3.display();
-  toy4.display();
   toy5.display();
   toy6.display();
  
